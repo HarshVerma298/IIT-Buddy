@@ -1,9 +1,11 @@
+from groq import Groq
 from qdrant_client import QdrantClient
 from sentence_transformers import SentenceTransformer
 
 # Your existing retrieval code
 qdrant_client = QdrantClient(url="https://356b0073-43ff-431b-869c-3323795ecd9e.europe-west3-0.gcp.cloud.qdrant.io:6333",
                             api_key=userdata.get("QDRANTAPI"))
+groq_client = Groq(api_key = userdata.get("GroqAPI2"))
 collection_name = "iitd_knowledge"
 
 embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
@@ -29,8 +31,8 @@ prompt = f"""You are a knowledgeable AI assistant. Use the information below to 
         Assistant:"""
 
 # Groq API call
-client = Groq(api_key = userdata.get("GroqAPI2"))
-response = client.chat.completions.create(
+
+response = groq_client.chat.completions.create(
     model="llama-3.3-70b-versatile",
     messages=[
         {"role": "system", "content": "You are a helpful AI assistant. Provide natural, conversational responses without referring to any context or sources."},
@@ -42,9 +44,4 @@ response = client.chat.completions.create(
     stream=False
 )
 
-# Print the response
 print(response.choices[0].message.content)
-
-# For debugging, you can also print the full response:
-# print("Full response:", response)
-
