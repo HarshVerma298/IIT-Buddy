@@ -1,6 +1,6 @@
 from groq import Groq
-from qdrant_client import QdrantClient
 from sentence_transformers import SentenceTransformer
+from qdrant_client import QdrantClient
 import streamlit as st
 
 qdrant_client = QdrantClient(url="https://356b0073-43ff-431b-869c-3323795ecd9e.europe-west3-0.gcp.cloud.qdrant.io:6333",
