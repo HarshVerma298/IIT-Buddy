@@ -1,1 +1,1 @@
-hosts a streamlite website
+hosts a streamlit website
