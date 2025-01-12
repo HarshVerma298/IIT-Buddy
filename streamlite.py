@@ -1,4 +1,5 @@
 import streamlit as st
+import queryresponder
 
 def initialize_session_state():
     if 'messages' not in st.session_state:
@@ -26,7 +27,7 @@ def main():
         st.session_state.messages.append({"role": "user", "content": prompt})
         
         # Get bot response (replace this with your actual response generation logic)
-        response = f"Echo: {prompt}"  # Placeholder response
+        response = queryresponder.respond(prompt)
         
         # Add assistant response to chat history
         st.session_state.messages.append({"role": "assistant", "content": response})
