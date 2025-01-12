@@ -6,9 +6,9 @@ Basic Roadmap of our project is as follows,
 
 -We converted the raw data which was mainly in .txt form to small chunks which were then efficiently tagged according to relevance with help of LLM(llama-3.3-70b-versatile) and then stored them as vector points in Qdrant 
 
- (#Problems faced in this step - #tokens excceded 
-  # Solution -   For this we feeded the data by breaking it into some ~ 35 parts ( each part had about 5000 tokens)
- )
+- Problems faced in this step - #tokens excceded 
+  Solution -   For this we feeded the data by breaking it into some ~ 35 parts ( each part had about 5000 tokens)
+
 
 -Then on the frontend we made a website using streamlit 
 
