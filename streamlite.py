@@ -1,5 +1,3 @@
-
-
 import streamlit as st
 
 def initialize_session_state():
@@ -24,12 +22,8 @@ def main():
     # Chat input
     prompt = st.text_area("What's your query?")
     if st.button("Enter"):
-
-        
         # Add user message to chat history
         st.session_state.messages.append({"role": "user", "content": prompt})
-        
-        
         
         # Get bot response (replace this with your actual response generation logic)
         response = f"Echo: {prompt}"  # Placeholder response
